@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #0e1c2f;
+    color: #e6f0f5;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #222630;
+    color: #f9f9f9;
+    padding: 1rem;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    background-color: #1f4068;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #16324f;
+}
+
+main {
+    background-color: #1b3b5a;
+    padding: 1rem;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    text-align: left;
+    background-color: #27496d;
+    border-bottom: 1px solid #cccccc;
+}
+
+table th {
+    background-color: #0c7b93;
+    color: #ffffff;
+}
+
+aside {
+    background-color: #27496d;
+    padding: 1rem;
+}
+
+footer {
+    background-color: #0c7b93;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main aside"
+            "footer footer";
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    header { grid-area: header; }
+    nav { grid-area: nav; }
+    main { grid-area: main; }
+    aside { grid-area: aside; }
+    footer { grid-area: footer; }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .title-block h1 {
+        font-size: 2rem;
+    }
+
+    .title-block h2 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        color: #dbe9f4;
+    }
+}
